@@ -1,0 +1,5 @@
+geopy==2.2.0
+emojis==0.6.0
+requests==2.25.1
+opencv_python==4.5.3.56
+beautifulsoup4==4.10.0

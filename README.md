@@ -1,6 +1,14 @@
 # Core - Python3 Classes for Core functionality  
 Core is a collection of Python3 classes written to make commonly used processes, faster & easier to use.  
 
+# Use in Projects  
+```
+cd ProjectFolder
+git clone https://github.com/4xx404/Core
+sudo python3 -m pip install -r Core/requirements.txt
+sudo rm -rf Core/.git
+```
+
 # Help Files    
 1. [Config Documentation](https://github.com/4xx404/core/blob/main/Documentation/Config.md)
 2. [Styling Documentation](https://github.com/4xx404/core/blob/main/Documentation/Styling.md)

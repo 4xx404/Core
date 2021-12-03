@@ -88,7 +88,7 @@ class Locate:
                 "placeholder": "",
             }
 
-            if(self.Measurement == "metre" or self.Measurement == "metres"):
+            if(self.Measurement == "metre" or self.Measurement == "metres" or self.Measurement == "meter" or self.Measurement == "meters"):
                 self.Response["measurement"] = "Metres"
                 self.Response["distance"] = round(geodesic(self.FromCoordinates, self.ToCoordinates).meters, 2)
             else:

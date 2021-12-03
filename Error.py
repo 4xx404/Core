@@ -45,6 +45,11 @@ class ErrorHandler:
             "write_to_file_failed",
             "append_to_file_failed",
 
+            # Natural Language Error Tags
+            "language_invalid_token_type",
+            "language_parse_words_failed",
+            "language_parse_sentences_failed"
+
         ]
 
     def Throw(self, ErrorType: str, ErrorData: str or list = None):
@@ -109,6 +114,14 @@ class ErrorHandler:
                 return f"\n{sd.eBan} Failed to write to file {bc.RC}{self.ErrorData}{bc.BC}\n"
             elif(self.ErrorType == "append_to_file_failed"):
                 return f"\n{sd.eBan} Failed to append {bc.RC}{self.ErrorData[0]}{bc.BC} to {bc.RC}{self.ErrorData[1]}{bc.BC}\n"
+
+            # NaturalLanguage Error Messages
+            elif(self.ErrorType == "language_invalid_token_type"):
+                return f"\n{sd.eBan} Invalid Natural Language Token Type {bc.RC}{self.ErrorData}{bc.BC}. Allowed types are {bc.GC}word{bc.BC} or {bc.GC}sentence{bc.BC}\n"
+            elif(self.ErrorType == "language_parse_words_failed"):
+                return f"\n{sd.eBan} Natural Language failed to create word tokens\n"
+            elif(self.ErrorType == "language_parse_sentences_failed"):
+                return f"\n{sd.eBan} Natural Language failed to create sentence tokens\n"
     
             # The ErrorType is defined but no Error Message is set, set the message above this line
             else:

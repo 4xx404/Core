@@ -41,11 +41,13 @@ class ErrorHandler:
             "request_collect_all_links_no_response",
 
             # FileSystem Class Error Tags
+            "read_from_file_failed",
             "write_to_file_failed",
+            "append_to_file_failed",
 
         ]
 
-    def Throw(self, ErrorType: str, ErrorData: str or list):
+    def Throw(self, ErrorType: str, ErrorData: str or list = None):
         self.ErrorType: str = ErrorType.lower()
         self.ErrorData: str or list = ErrorData
 
@@ -90,9 +92,9 @@ class ErrorHandler:
             elif(self.ErrorType == "find_by_address_failed"):
                 return f"\n{sd.eBan} Failed to collect any data from address {bc.RC}{self.ErrorData}{bc.BC}\n"
             elif(self.ErrorType == "find_by_coordinates_failed"):
-                return f"\n{sd.eBan} Failed to collect any data from latitude {bc.GC}{self.ErrorData[0]}{bc.BC} || longitude {bc.RC}{self.ErrorData[1]}{bc.BC}\n"
+                return f"\n{sd.eBan} Failed to collect any data from latitude {bc.RC}{self.ErrorData[0]}{bc.BC} || longitude {bc.RC}{self.ErrorData[1]}{bc.BC}\n"
             elif(self.ErrorType == "get_distance_failed"):
-                return f"\n{sd.eBan} Failed to get distance between latitude {bc.GC}{self.ErrorData[0]}{bc.BC} & longitude {bc.RC}{self.ErrorData[1]}{bc.BC}\n"
+                return f"\n{sd.eBan} Failed to get distance between latitude {bc.RC}{self.ErrorData[0]}{bc.BC} & longitude {bc.RC}{self.ErrorData[1]}{bc.BC}\n"
 
             # Request Class Error Messages
             elif(self.ErrorType == "request_get_content_no_response"):
@@ -101,8 +103,12 @@ class ErrorHandler:
                 return f"\n{sd.eBan} Got no response from {bc.RC}{self.ErrorData}{bc.BC}, failed to collect all links\n"
 
             # FileSystem class Error Messages
+            elif(self.ErrorType == "read_from_file_failed"):
+                return f"\n{sd.eBan} Failed to read from file {bc.RC}{self.ErrorData}{bc.BC}\n"
             elif(self.ErrorType == "write_to_file_failed"):
-                return f"\n{sd.eBan} Failed to write to file {bc.GC}{self.ErrorData}{bc.BC}\n"
+                return f"\n{sd.eBan} Failed to write to file {bc.RC}{self.ErrorData}{bc.BC}\n"
+            elif(self.ErrorType == "append_to_file_failed"):
+                return f"\n{sd.eBan} Failed to append {bc.RC}{self.ErrorData[0]}{bc.BC} to {bc.RC}{self.ErrorData[1]}{bc.BC}\n"
     
             # The ErrorType is defined but no Error Message is set, set the message above this line
             else:

@@ -13,6 +13,7 @@ class CoreConfig:
         }
 
         # Database Variables
+        self.SqliteDatabasePath = f"{self.AppName}.db"
         self.DBHost = "localhost"
         self.DBName = "" # Enter the name of your database
         self.DBUser = "root" # Usually root, change here if your database user is different

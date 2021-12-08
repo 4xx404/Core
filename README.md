@@ -3,10 +3,10 @@ Core is a collection of Python3 classes written to make commonly used processes,
 
 # Use in Projects  
 ```
-cd ProjectFolder
 git clone https://github.com/4xx404/Core
+sudo mv Core/ ProjectFolder/
+cd ProjectFolder
 sudo python3 -m pip install -r Core/requirements.txt
-sudo rm -rf Core/.git
 ```
 
 # Help Files    

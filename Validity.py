@@ -53,6 +53,22 @@ class Validation:
             return True
         else:
             return False
+        
+    def StartsOrEndsWith(self, TrailType: str, StringValues: str, CharacterToCheck: str):
+        self.TrailType: str = TrailType.lower() # start || end
+        self.StringValue: str = StringValues # example: "does this string have a space?"
+        self.CharacterToCheck: str = CharacterToCheck # example: " " // Space
+
+        if(self.TrailType == "start"):
+            if(self.StringValue.startswith(self.CharacterToCheck)):
+                return True
+            else:
+                return False
+        elif(self.TrailType == "end"):
+            if(self.StringValue.endswith(self.CharacterToCheck)):
+                return True
+            else:
+                return False
 
     def IsEmailFormat(self, Email: str):
         self.Email: str = Email

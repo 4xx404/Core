@@ -11,9 +11,27 @@ class Command:
 
         self.Logo: str = sd.Logo
 
-    def Clear(self):
-        os.system("clear")
-        print(self.Logo)
+    def Clear(self, Message: str = None, ShouldQuit: bool = False):
+        self.Message: str = Message
+        self.ShouldQuit: bool = ShouldQuit
+
+        if(self.Message != None and self.ShouldQuit == False):
+            os.system("clear")
+            print(sd.banner)
+            print(self.Message)
+        elif(self.Message == None and self.ShouldQuit == True):
+            os.system("clear")
+            print(sd.banner)
+            quit()
+        elif(self.Message != None and self.Message == True):
+            os.system("clear")
+            print(sd.banner)
+            print(self.Message)
+            quit()
+        else:
+            # Message: None, ShouldQuit: False
+            os.system("clear")
+            print(sd.banner)
 
     def MoveFile(self, FileToMove: str, Destination: str):
         self.FileToMove: str = FileToMove

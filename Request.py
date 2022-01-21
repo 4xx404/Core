@@ -22,7 +22,10 @@ class RequestHandler:
         except Exception:
             return False
 
-        return True
+        if(self.Request.status_code == 200):
+            return True
+        else:
+            return False
 
     # Return the page content as bytes by default, set ReturnAsString = True to return as string type
     def GetContent(self, Link: str, ReturnAsString: bool = False):

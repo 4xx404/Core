@@ -17,21 +17,21 @@ class Command:
 
         if(self.Message != None and self.ShouldQuit == False):
             os.system("clear")
-            print(sd.banner)
+            print(self.Logo)
             print(self.Message)
         elif(self.Message == None and self.ShouldQuit == True):
             os.system("clear")
-            print(sd.banner)
+            print(self.Logo)
             quit()
         elif(self.Message != None and self.Message == True):
             os.system("clear")
-            print(sd.banner)
+            print(self.Logo)
             print(self.Message)
             quit()
         else:
             # Message: None, ShouldQuit: False
             os.system("clear")
-            print(sd.banner)
+            print(self.Logo)
 
     def MoveFile(self, FileToMove: str, Destination: str):
         self.FileToMove: str = FileToMove

@@ -23,7 +23,7 @@ class Command:
             os.system("clear")
             print(self.Logo)
             quit()
-        elif(self.Message != None and self.Message == True):
+        elif(self.Message != None and self.ShouldQuit == True):
             os.system("clear")
             print(self.Logo)
             print(self.Message)
